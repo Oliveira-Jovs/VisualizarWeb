@@ -26,10 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             console.log('Evento cadastrado com sucesso:', data);
-            // Aqui você pode realizar mais ações, como redirecionar ou limpar o formulário
+            // Feedback de sucesso
+            document.getElementById('mensagem').innerHTML = `<p style="color: green;">Evento cadastrado com sucesso!</p>`;
+            // Aqui você pode redirecionar ou limpar o formulário
+            document.getElementById('form-evento').reset();
         })
         .catch(error => {
             console.error('Erro:', error);
+            // Feedback de erro
+            document.getElementById('mensagem').innerHTML = `<p style="color: red;">Erro ao cadastrar evento: ${error.message}</p>`;
         });
     });
 });
