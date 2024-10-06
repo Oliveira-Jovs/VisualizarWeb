@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="icon" href="images\logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <img src="images\ifpe_logo.png" alt="Logo IFPE" class="logo">
+            <nav>
+                <a href="eventos.html">Eventos</a>
+                <a href="index.html">Sair</a>
+            </nav>
+        </div>
+    </header>
+    <main class="tela-inicial">
+        <h2>Criação de Eventos</h2>
+    </main>
+
+    <div><main class="form-container">
+        <h2>Cadastro</h2>
+        <form id="form-servidor" action="perfil-servidor-clone.html">
+            
+        <section class="personal-evento">
+            <h3>Informações do Evento</h3>
+            <br>
+            <label for="nome">NOME</label>
+            <input type="text" id="nome" name="nome">
+            <label for="descricao">DESCRICAO</label>
+            <input type="text" id="descricao" name="descricao">
+            <label for="data">DATA</label>
+            <input type="text" id="data" name="data">
+            <label for="local">LOCAL</label>
+            <input type="text" id="local" name="local">
+          
+        </section>
+
+            <button type="submit" class="btn">Salvar</button>
+        </form>
+        <br>
+        <a href="perfil-servidor-clone.html" class="btn">Voltar para o perfil</a>
+    </main>
+</div>
+</body>
+</html>
