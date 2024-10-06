@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('form-servidor').addEventListener('submit', function(event) {
+    document.getElementById('form-evento').addEventListener('submit', function(event) {
         event.preventDefault();
 
         // Crie o objeto evento
