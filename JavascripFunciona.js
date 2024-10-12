@@ -1,7 +1,7 @@
 // Função para obter eventos
 async function getEventos() {
     try {
-        const response = await fetch('http://localhost:8080/eventos'); // URL do seu backend
+        const response = await fetch('http://localhost:8080/evento'); // URL do seu backend
         if (!response.ok) {
             throw new Error(`Erro ao buscar eventos: ${response.status}`);
         }
@@ -49,7 +49,7 @@ async function deletarEvento(idEvento) {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/eventos/${idEvento}`, {
+        const response = await fetch(`http://localhost:8080/evento/${idEvento}`, {
             method: 'DELETE'
         });
         if (response.ok) {
