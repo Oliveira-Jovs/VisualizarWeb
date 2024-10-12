@@ -1,40 +1,45 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('form-evento').addEventListener('submit', function(event) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form-events");
+    const saveButton = document.querySelector(".btn");
 
-        // Crie o objeto evento
-        const evento = {
-            nome: document.getElementById('nome').value,
-            descricao: document.getElementById('descricao').value,
-            data: document.getElementById('data').value,
-            local: document.getElementById('local').value,
+    saveButton.addEventListener("click", (e) => {
+        e.preventDefault();  // Evita o comportamento padrão de recarregar a página
+        
+        // Captura os valores do formulário
+        const nome = document.getElementById("nome").value;
+        const descricao = document.getElementById("descricao").value;
+        const data = document.getElementById("data").value;
+        const local = document.getElementById("local").value;
+        const tipo = document.getElementById("tipo").value;
+
+        // Criação do objeto com os dados do evento
+        const eventoData = {
+            nome: nome,
+            descricao: descricao,
+            data: data,
+            local: local,
+            tipo: tipo
         };
 
-        // Primeiro POST: Criar o Evento
-        fetch('http://localhost:8080/evento', {
-            method: 'POST',
+        // Envia os dados para a API
+        fetch("http://localhost:8080/eventos", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(evento)
+            body: JSON.stringify(eventoData)
         })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao cadastrar evento: ' + response.statusText);
+            if (response.ok) {
+                alert("Evento criado com sucesso!");
+                return response.json();
+            } else {
+                throw new Error("Erro ao criar o evento");
             }
-            return response.json(); // Retorna o objeto Evento com o ID
-        })
-        .then(data => {
-            console.log('Evento cadastrado com sucesso:', data);
-            // Feedback de sucesso
-            document.getElementById('mensagem').innerHTML = `<p style="color: green;">Evento cadastrado com sucesso!</p>`;
-            // Aqui você pode redirecionar ou limpar o formulário
-            document.getElementById('form-evento').reset();
         })
         .catch(error => {
-            console.error('Erro:', error);
-            // Feedback de erro
-            document.getElementById('mensagem').innerHTML = `<p style="color: red;">Erro ao cadastrar evento: ${error.message}</p>`;
+            console.error("Erro:", error);
+            alert("Erro ao criar o evento.");
         });
     });
 });
