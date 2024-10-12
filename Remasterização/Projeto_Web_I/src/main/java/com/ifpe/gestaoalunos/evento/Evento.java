@@ -32,8 +32,14 @@ public class Evento {
 	private String descricao;
 	private String data;
 	private String local;
+	private String tipo;
+	private boolean ativo;
 	
 	@ManyToOne
 	@JoinColumn(name = "idServidor")
 	private Servidor servidor;
+
+	public void inativar() {
+		this.ativo = false;
+	}
 }

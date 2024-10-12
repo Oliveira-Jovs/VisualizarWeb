@@ -24,7 +24,7 @@ body {
 }
 
 .landing-page {
-    background-image: url('images/teste.png'); /* Substitua pelo caminho correto da imagem */
+    background-image: url('images/landing-page.png'); /* Substitua pelo caminho correto da imagem */
     background-size: cover; /* Faz a imagem cobrir todo o fundo */
     background-position: center; /* Centraliza a imagem no fundo */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
