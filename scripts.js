@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // Envia os dados para a API
-        fetch("http://localhost:8080/eventos", {
+        fetch("http://localhost:8080/evento", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
